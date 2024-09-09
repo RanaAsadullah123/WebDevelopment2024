@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:white;
+           
+        }
+        .main{
+            width: 750px;
+            height: 750px;
+            border: 1px solid black;
+            background-color:khaki;
+        }
+        .upper{
+            display: flex;
+            
+        }
+        .redBox{
+            width: 300px;
+            height: 300px;
+            background: red;
+            border: 1px solid black;
+        }
+        .blueBox{
+            width: 300px;
+            height: 300px;
+            background:blue;
+            border: 1px solid black;
+        }
+        .yellowBox{
+            width: 300px;
+            height: 300px;
+            background:yellow;
+            border: 1px solid black;
+        }
+        .greenBox{
+            width: 300px;
+            height: 300px;
+            background:green;
+            border: 1px solid black;
+        }
+        .whiteBox{
+            width: 200px;
+            height: 200px;
+            background: white;
+            margin: 0px auto;
+            margin-top: 50px;
+        }
+        .circleRed{
+            border-radius: 100px;
+            background: red;
+            width: 50px;
+            height: 50px;
+            float: left;
+            margin: 14px;
+        }
+        .circleBlue{
+            border-radius: 100px;
+            background: blue;
+            width: 50px;
+            height: 50px;
+            float: left;
+            margin: 14px;
+        }
+        .circleGreen{
+            border-radius: 100px;
+            background: green;
+            width: 50px;
+            height: 50px;
+            float: left;
+            margin: 14px;
+        }
+        .circleYellow{
+            border-radius: 100px;
+            background:yellow;
+            width: 50px;
+            height: 50px;
+            float: left;
+            margin: 14px;
+        }
+        .columns{
+            width: 150px;
+            height: 300px;
+            border: 1px solid black;
+        }
+        .box{
+            
+            width: 48px;
+            height: 48px;
+            background: white;
+            border: 1px solid black;
+           
+            
+        }
+        .blueRow{
+            width: 150px;
+            height: 50px;
+            display: flex;
+        }
+        .middle{
+            display: flex;
+            
+        }
+        .rows{
+            width: 300px;
+            height: 150px;
+            border: 1px solid black; 
+            justify-content: space-between;
+        }
+        .redRow{
+            width: 50px;
+            height: 150px;
+            float: left;
+            
+        }
+        .home{
+            display: flex;
+        }
+        .win{
+           
+           border: 1px solid black;
+            border-top: 73px solid blue;
+            border-right: 73px solid yellow;
+            border-bottom: 73px solid green;
+            border-left: 73px solid red;
+        }
+        .lower{
+            display: flex;
+            
+        }
+        .blue{
+            background-color: blue;
+        }
+        .red{
+            background-color: red;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .green{
+            background-color: green;
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="upper">
+            <div class="redBox">
+                <div class="whiteBox">
+                    <div class="circleRed"></div>
+                    <div class="circleRed"></div>
+                    <div class="circleRed"></div>
+                    <div class="circleRed"></div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class=" blueRow">
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </div>
+                <div class=" blueRow">
+                    <div class="box"></div>
+                    <div class="box blue"></div>
+                    <div class="box blue"></div>
+                </div> 
+                <div class=" blueRow">
+                    <div class="box blue"></div>
+                    <div class="box blue"></div>
+                    <div class="box"></div>
+                </div> 
+                <div class=" blueRow">
+                    <div class="box"></div>
+                    <div class="box blue"></div>
+                    <div class="box"></div>
+                </div> 
+                <div class=" blueRow">
+                    <div class="box"></div>
+                    <div class="box blue"></div>
+                    <div class="box"></div>
+                </div> 
+                <div class=" blueRow">
+                    <div class="box"></div>
+                    <div class="box blue"></div>
+                    <div class="box"></div>
+                </div>    
+            </div>
+            <div class="blueBox">
+                <div class="whiteBox">
+                    <div class="circleBlue"></div>
+                    <div class="circleBlue"></div>
+                    <div class="circleBlue"></div>
+                    <div class="circleBlue"></div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="middle">
+            <div class="rows">
+                <div class=" redRow">
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </div>
+                <div class=" redRow">
+                    <div class="box red"></div>
+                    <div class="box red"></div>
+                    <div class="box"></div>
+                </div> 
+                <div class=" redRow">
+                    <div class="box"></div>
+                    <div class="box red"></div>
+                    <div class="box red"></div>
+                </div> 
+                <div class=" redRow">
+                    <div class="box"></div>
+                    <div class="box red"></div>
+                    <div class="box"></div>
+                </div> 
+                <div class=" redRow">
+                    <div class="box"></div>
+                    <div class="box red"></div>
+                    <div class="box"></div>
+                </div> 
+                <div class=" redRow">
+                    <div class="box"></div>
+                    <div class="box red"></div>
+                    <div class="box"></div>
+                </div>    
+            </div>
+            <div class="home">
+                <div class="win"></div>
+            </div>
+            <div class="rows">
+                <div class=" redRow">
+                    <div class="box"></div>
+                    <div class="box yellow"></div>
+                    <div class="box"></div>
+                </div>
+                <div class=" redRow">
+                    <div class="box "></div>
+                    <div class="box yellow"></div>
+                    <div class="box"></div>
+                </div> 
+                <div class=" redRow">
+                    <div class="box"></div>
+                    <div class="box yellow"></div>
+                    <div class="box"></div>
+                </div> 
+                <div class=" redRow">
+                    <div class="box yellow"></div>
+                    <div class="box yellow"></div>
+                    <div class="box"></div>
+                </div> 
+                <div class=" redRow">
+                    <div class="box"></div>
+                    <div class="box yellow"></div>
+                    <div class="box yellow"></div>
+                </div> 
+                <div class=" redRow">
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </div>    
+            </div>
+        </div>
+        <div class="lower">
+            <div class="greenBox">
+                <div class="whiteBox">
+                    <div class="circleGreen"></div>
+                    <div class="circleGreen"></div>
+                    <div class="circleGreen"></div>
+                    <div class="circleGreen"></div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class=" blueRow">
+                    <div class="box"></div>
+                    <div class="box green"></div>
+                    <div class="box"></div>
+                </div>
+                <div class=" blueRow">
+                    <div class="box"></div>
+                    <div class="box green"></div>
+                    <div class="box"></div>
+                </div> 
+                <div class=" blueRow">
+                    <div class="box"></div>
+                    <div class="box green"></div>
+                    <div class="box"></div>
+                </div> 
+                <div class=" blueRow">
+                    <div class="box"></div>
+                    <div class="box green"></div>
+                    <div class="box green"></div>
+                </div> 
+                <div class=" blueRow">
+                    <div class="box green"></div>
+                    <div class="box green"></div>
+                    <div class="box"></div>
+                </div> 
+                <div class=" blueRow">
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </div>    
+            </div>
+            <div class="yellowBox">
+                <div class="whiteBox">
+                    <div class="circleYellow"></div>
+                    <div class="circleYellow"></div>
+                    <div class="circleYellow"></div>
+                    <div class="circleYellow"></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
