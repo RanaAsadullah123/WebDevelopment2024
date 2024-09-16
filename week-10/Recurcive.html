@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+    <link rel="stylesheet" href="../resources/css/buttons.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0% auto;
+            background: pink;
+            border: 1px solid black;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input{
+            margin-top: 20px;
+            width: 50%;
+            padding: 12px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 15px;
+            
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        #calc{
+            background:green
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Recurcive Function</h1>
+    <div class="container">
+        <input type="number" placeholder="Enter a number" id="number" min="0" />
+        <button onclick="calculate()" id="calc">Calculate</button>
+        <div class="result" id="result"></div>
+    </div>
+    <div class="buttons-container">
+        <div class="buttons-wrapper">
+            <button>
+                <a href="../week-9/operator.html">Previous</a>
+            </button>
+            <button>
+                <a href="../index.html">Home</a>
+            </button>
+            <button>
+                <a href="../week-10/Circle.html">Next</a>
+            </button>
+        </div>
+    </div>
+    
+
+    <script>
+        function factorial(n) {
+            if (n === 0) {
+                return 1;
+            }
+            return n * factorial(n - 1);
+        }
+
+        function calculate() {
+            const numberInput = document.getElementById('number').value;
+            const number = parseInt(numberInput, 10);
+
+            if (isNaN(number) || number < 0) {
+                document.getElementById('result').innerText = 'Please enter a positive integer.';
+                return;
+            }
+
+            const result = factorial(number);
+            document.getElementById('result').innerText = `Factorial of ${number} is ${result}.`;
+        }
+    </script>
+</body>
+</html>

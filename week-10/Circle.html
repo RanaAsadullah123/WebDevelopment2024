@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Circles</title>
+    <link rel="stylesheet" href="../resources/css/buttons.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            border: 1px solid #000;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 14)];
+            }
+            return color;
+        }
+
+        function drawCircle(x, y, radius, depth) {
+            if (depth === 0) return;
+            ctx.strokeStyle = getRandomColor();
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, 2 * Math.PI);
+            ctx.stroke();
+            const newRadius = radius * 0.7; 
+            drawCircle(x, y, newRadius, depth - 1); 
+        }
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const initialRadius = 800;
+        const maxDepth = 15;
+
+        drawCircle(centerX, centerY, initialRadius, maxDepth);
+    </script>
+    <div class="buttons-container">
+        <div class="buttons-wrapper">
+            <button>
+                <a href="../index.html">Next</a>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
+
