@@ -14,29 +14,21 @@
             
         }
         input {
-             
-            color:blue;
+             color:blue;
         }
-        .button {
-            border: 2px solid rgb(12 12 12);
-    
-            padding: 6px  45px;
-            border-radius: 12px;
-            margin: 2px 4px  6px;
-
-        }
+        
     </style>
 </head>
 <body>
     <div class="header">
-        <h1> login page</h1>
+        <h1> Login page</h1>
     </div>
     <form>
     <div> First Name </div>  
            <span> <input name="name" placeholder="First Name">
            <div>  last Name </div>
-        <input name="name" placeholder="last Name"></span></div>
-        <div> Age</div>
+           <input name="name" placeholder="last Name"></span></div>
+   <div> Age</div>
    <div> <input type="age" placeholder="Enter your age"></div>
    <div> cnic</div>
    <div><input type="cnic" placeholder="Enter your cnic"></div>
@@ -56,9 +48,9 @@
     <textarea name="box" id="pk" rows="2" cols="12"> </textarea>
     <h4> Are you  agree in these information</h4>
       <label for="option" > no</label>
-      <input type="checkbox" id="option" >
+      <input type="radio" name="ra" id="option" >
       <label for="option"> yes</label>
-      <input type="checkbox" id="option">
+      <input type="radio" name="ra" id="option">
         <div>
         <select name="" id="">
             <option>select one</option>
@@ -69,18 +61,15 @@
         </div>
         <h4>select your country</h4>
         <label for="pk"> PAK</label>
-        <input type="radio" id="pk">
+        <input type="radio" name="ra" id="pk">
         <label for="usa"> usa</label>
-        <input type="radio" id="usa">
+        <input type="radio" name="ra" id="usa">
         <label for="china"> china</label>
-        <input type="radio" id="china">
+        <input type="radio" name="ra" id="china">
         <label for="itly"> itly</label>
-        <input type="radio" id="itly">
+        <input type="radio" name="ra" id="itly">
 
     <div><input type="submit"value="save"></div>
-    <a href="website.html">
-    <button class="button"> Next</button>
-    </a>
     </form>
     <div class="buttons-container">
         <div class="buttons-wrapper">
