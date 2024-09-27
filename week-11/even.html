@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+           
+        }
+        .container{
+
+            width: 400px;
+            height: 600px;
+            display:inline-table;
+            background-color: burlywood;
+            justify-content:center;
+            align-items:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header><h3>Even Number Calculate</h3></header>
+        
+        <tr>
+            <input type="number" id="num">
+            <button type="button" onclick="cal()">Calculate</button>
+        </tr>
+    </div>
+</body>
+<script>
+    function cal(){
+        let num = document.getElementById("num").value;
+        parseInt(num);
+     for(var i=1;i <= num;i++){
+        if(i % 2 === 0 ){
+            console.log( i + " is even .");
+        }
+     }
+     
+    }
+    cal();
+</script>
+</html>
