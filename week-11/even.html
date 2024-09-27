@@ -27,18 +27,21 @@
             <input type="number" id="num">
             <button type="button" onclick="cal()">Calculate</button>
         </tr>
+        <div class="result" id="result">Result</div>
     </div>
 </body>
 <script>
     function cal(){
         let num = document.getElementById("num").value;
+        let result = document.querySelector("#result");
         parseInt(num);
      for(var i=1;i <= num;i++){
         if(i % 2 === 0 ){
-            console.log( i + " is even .");
+            let div = document.createElement("div");
+            div.textContent = i + " is even .";
+            result.appendChild(div); 
         }
      }
-     
     }
     cal();
 </script>
