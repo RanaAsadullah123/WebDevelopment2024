@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+    <style>
+        h1{
+            background-color: rgb(42, 146, 231);
+            color:white;
+        }
+        .head{
+            display:flex;
+            justify-content: space-between;
+        }
+        .button{
+            padding: 20px;
+            background-color: rgb(92, 143, 221);
+        }
+        #sign{
+            justify-content: center;
+            align-items: center;
+            width: 260PX;
+            height: 300PX;
+            border: 1px solid black;
+        }
+        #teacherFORM{
+            display:none;
+        }
+        .BOX{
+            width: 250px;
+           
+          
+        }
+        .form{
+            padding: 35px;;
+          display: flex;
+          justify-self:center;
+          align-items: center;
+        }
+        #sign{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background-color: burlywood;
+            
+        }
+        table{
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+        #addTeacher{
+            background-color:rgb(42, 146, 231) ;
+        }
+        th{
+            background-color: rgba(0, 0, 0, 0.63);
+            color: white;
+        }
+        tr,th,td{
+            border: 1px solid;
+            padding: 5px 10px;
+        }
+
+        
+        
+
+        
+    </style>
+</head>
+<body>
+    <h1>School Management System</h1>
+    <div   class="container" id="main">
+        <div class="head">
+            <button id="student" class="button" onclick="Teacherform()">Teacher</button>
+            
+        </div>
+        <div class="form" id="teacherFORM">
+            <div id="sign">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" class="BOX">
+                </div>
+                <div>
+                    <label for="colifcation">colifcation:</label>
+                    <input type="text" id="colifcation" class="BOX">
+                </div>
+                <div>
+                    <label for="salary">Salary:</label>
+                    <input type="number" id="incom" class="BOX">
+                </div>
+                <div>
+                    <select id="gender" class="Box">
+                        <option>Gender</option>
+                        <option>male</option>
+                        <option>female</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="dob">Date of birth:</label>
+                    <input type="date" id="dob" class="BOX">
+                </div>
+                <button id="addTeacher">addTeacher</button>
+            </div>
+            
+        </div>
+        <div>
+            <h2>Teacher List</h2>
+        </div>
+        <div id="Teacherlist"></div>
+        
+    </div>
+
+    <script>
+        let teachers = [];
+        class Person{
+            constructor(name,dob,gender){
+                this.name = name;
+                this.dob =dob;
+                this.gender = gender;
+            }
+
+        }
+        class Teacher extends Person{
+            constructor(name,dob,gender,colifcation,incom){
+                super(name,dob,gender);
+                this.colifcation = colifcation;
+                this.incom = incom;
+            }
+        }
+         
+        let addTeacher = document.getElementById("addTeacher");
+        let teacherTable = document.getElementById("Teacherlist");    
+        function Teacherform(){
+            let addForm = document.getElementById("teacherFORM")
+            addForm.style.display = "block";
+        } 
+        addTeacher.addEventListener("click",()=>{
+              let name = document.getElementById("name").value;
+              let dob = document.getElementById("dob").value;
+              let gender = document.getElementById("gender").value;
+              let colifcation = document.getElementById("colifcation").value;
+              let incom = document.getElementById("incom").value;
+              if(!name || !dob || !gender || !colifcation || !incom){
+                alert("enter complete data.");
+                return;
+              };
+              let newTeacher = new Teacher (name,dob,gender,colifcation,incom);
+              teachers.push(newTeacher);
+              teacherTable.innerHTML = '';
+              let table = document.createElement("table");
+              teacherTable.appendChild(table);
+            
+              table.innerHTML = `
+              <tr>
+               <th>Name</th> 
+               <th>dob</th> 
+               <th>gender</th>
+               <th>Education</th>
+               <th>salary</th>    
+            </tr>
+              ${teachers.map((teacher)=>`
+            <tr>
+               <td> ${teacher.name} </td>
+               <td> ${teacher.dob} </td>
+               <td> ${teacher.gender} </td>
+               <td> ${teacher.colifcation} </td>
+               <td> ${teacher.incom} </td>
+            </tr>
+              `).join('')}
+              `;
+            });
+
+        
+
+    </script>
+    
+</body>
+</html>

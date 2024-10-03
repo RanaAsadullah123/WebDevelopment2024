@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+    <style>
+        h1{
+            background-color: rgb(42, 146, 231);
+            color:white;
+        }
+        .button{
+            padding: 20px;
+            background-color: rgb(92, 143, 221);
+        }
+        .form{
+            padding: 20px;
+            border: 1px solid ;
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 15px;
+        
+        }
+        #logo_page{
+            display: none;
+            background-color: cadetblue;
+            color:black;
+            
+        }
+        #sign{
+            gap: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>School Management System </h1>
+    <div class="container">
+        <button id="st" class="button" onclick="studentFORM()">Admin</button>
+    </div>
+    <div class="m_log">
+        <p>weelcome to Admin home page.
+        </p>
+        <div class="form" id="logo_page">
+           <div id="sign">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="name" id="name">
+                </div>
+                <div>
+                    <label for="Email">Email:</label>
+                    <input type="email" id="email">
+                </div>
+                <div>
+                    <label for="name">Password:</label>
+                    <input type="password" id="password">
+                </div>
+                <div>
+                    <button  id="login">
+                        <a href="./Student.html">login</a>
+                    </button>
+                </div>
+           </div>
+        </div>
+    </div>
+    <script>
+        function studentFORM(){
+           
+           let addForm = document.getElementById("logo_page")
+           addForm.style.display = "block";
+           if(!name || !email || !password){
+                alert("Fell it form.")
+                return;
+            }
+        }
+    </script>
+</body>
+</html>
