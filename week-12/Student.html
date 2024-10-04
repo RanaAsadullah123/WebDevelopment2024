@@ -6,16 +6,17 @@
     <title>School Management System</title>
     <style>
         h1{
-            background-color: rgb(42, 146, 231);
+            background: linear-gradient(#e747a4,#241010,#345534);
             color:white;
         }
         .head{
             display: flex;
-            gap: 1000px;
+            gap: 20px;
         }
         .button{
             padding: 20px;
-            background-color: rgb(92, 143, 221);
+            color: white;
+            background: linear-gradient(to right,#0b4dc9,#5e84af,#535557);
         }
         #sign{
             justify-content: center;
@@ -52,6 +53,7 @@
         table{
             border: 1px solid;
             border-collapse: collapse;
+            width: 100%;
         }
         th{
             background-color: rgba(0, 0, 0, 0.63);
@@ -104,24 +106,30 @@
                 </div>
                 <div>
                     <label for="name">Roll Num:</label>
-                    <input type="number" id="roll_no" class="BOX">
+                    <input type="number" id="Rol_num" class="BOX">
                 </div>
                 <div>
-                    <label for="fee">Fee:</label>
-                    <input type="number" id="StudentFee" class="BOX">
+                  <select id="course" class="BOX">
+                    <option>Course</option>
+                    <option>Web Devolpment</option>
+                    <option>BSCS</option>
+                    <option>BSIT</option>
+                  </select>
                 </div>
                 <button id="addStudent">addStudent</button>
+                
             </div>
             
         </div>
+        <img src="../resources/imege/student.jpg" alt="school image" width="100%" height="500px">
         <div>
             <h2>Student List</h2>
         </div>
         <div id="Studentlist"></div>
         
     </div>
-
     <script>
+
         let students = [];
         class Person{
             constructor(name,fatherName,dob,gender){
@@ -133,11 +141,11 @@
 
         }
         class Student extends Person{
-            constructor(name,fatherName,dob,gender,section,roll_no,StudentFee){
+            constructor(name,fatherName,dob,gender,section,Rol_num,course){
                 super(name,fatherName,dob,gender);
                 this.section = section;
-                this.roll_no = roll_no;
-                this.StudentFee = StudentFee;
+                this.Rol_num = Rol_num;
+                this.course = course;
             }
         } 
         let addStudent = document.getElementById("addStudent");
@@ -153,12 +161,13 @@
               let dob = document.getElementById("dob").value
               let gender = document.getElementById("gender").value
               let section = document.getElementById("section").value
-              let StudentFee = document.getElementById("StudentFee").value
-              if(!name || !fatherName || !dob || !gender || !section || !StudentFee){
+              let Rol_num = document.getElementById("Rol_num").value
+              let course = document.getElementById("course").value;
+              if(!name || !fatherName || !dob || !gender || !section || !Rol_num || !course){
                 alert("Enter complete data.");
                 return;
               };
-              let newStudent = new Student (name,fatherName,dob,gender,section,StudentFee);
+              let newStudent = new Student (name,fatherName,dob,gender,section,Rol_num,course);
               students.push(newStudent);
               studentTable.innerHTML = '';
               let table = document.createElement("table");
@@ -170,25 +179,25 @@
                <th>fatherName</th>  
                <th>dob</th> 
                <th>gender</th>
-               <th>section</th>
-               <th>StudentFee</th>      
+               <th>Class</th>
+               <th>RollNum</th>
+               <th>Course</th>      
             </tr>
-              ${students.map((student)=>`
+               ${students.map((student)=>`
             <tr>
                <td> ${student.name} </td>
                <td> ${student.fatherName} </td>
                <td> ${student.dob} </td>
                <td> ${student.gender} </td>
                <td> ${student.section} </td>
-               <td> ${student.StudentFee} </td>
+               <td> ${student.Rol_num} </td>
+               <td> ${student.course} </td>
             </tr>
               `).join('')}
               `;
             });
-
-        
-
     </script>
+
     
 </body>
 </html>
